@@ -40,62 +40,145 @@ export const PHRASE_GROUPS = [
   },
 
   {
-    title: "Conversation",
+    title: "Basics",
     items: [
-      { id: "conv_yes", en: "Yes", lo: "ແມ່ນ", say: "maen" },
-      { id: "conv_no", en: "No", lo: "ບໍ່", say: "bor" },
-      { id: "conv_ok", en: "OK", lo: "ໂອເຄ", say: "oh-kay" },
-      { id: "conv_maybe", en: "Maybe", lo: "ອາດຈະ", say: "aat ja" },
+      { id: "basic_yes", en: "Yes", lo: "ແມ່ນ", say: "maen" },
+      { id: "basic_no", en: "No", lo: "ບໍ່", say: "bor" },
+      { id: "basic_ok", en: "OK", lo: "ໂອເຄ", say: "oh-kay" },
+      { id: "basic_maybe", en: "Maybe", lo: "ອາດຈະ", say: "aat ja" },
 
-      { id: "conv_sorry", en: "Sorry", lo: "ຂໍໂທດ", say: "kho thot" },
-      { id: "conv_excuse_me", en: "Excuse me", lo: "ຂໍໂທດ", say: "kho thot" },
-      { id: "conv_please", en: "Please", lo: "ກະລຸນາ", say: "ga-lu-na" },
+      { id: "basic_please", en: "Please", lo: "ກະລຸນາ", say: "ga-lu-na" },
+      { id: "basic_sorry", en: "Sorry", lo: "ຂໍໂທດ", say: "kho thot" },
+      { id: "basic_excuse_me", en: "Excuse me", lo: "ຂໍໂທດ", say: "kho thot" },
 
-      { id: "conv_wait", en: "Wait a moment", lo: "ຖ້າກ່ອນ", say: "tha kon" },
-      { id: "conv_now", en: "Now", lo: "ດຽວນີ້", say: "diao nee" },
-      { id: "conv_later", en: "Later", lo: "ຕອນຫຼັງ", say: "ton lang" },
-      { id: "conv_yesterday", en: "Yesterday", lo: "ມື້ວານ", say: "mue van" },
-      { id: "conv_today", en: "Today", lo: "ມື້ນີ້", say: "mue nee" },
-      { id: "conv_tomorrow", en: "Tomorrow", lo: "ມື້ອື່ນ", say: "mue eun" },
+      { id: "basic_good", en: "Good", lo: "ດີ", say: "dee" },
+      { id: "basic_not_good", en: "Not good", lo: "ບໍ່ດີ", say: "bor dee" },
+      { id: "basic_very_good", en: "Very good", lo: "ດີຫຼາຍ", say: "dee lai" },
+    ],
+  },
 
+  {
+    title: "Time",
+    items: [
+      { id: "time_now", en: "Now", lo: "ດຽວນີ້", say: "diao nee" },
+      { id: "time_wait", en: "Wait a moment", lo: "ຖ້າກ່ອນ", say: "tha kon" },
+      { id: "time_later", en: "Later", lo: "ຕອນຫຼັງ", say: "ton lang" },
+
+      { id: "time_yesterday", en: "Yesterday", lo: "ມື້ວານ", say: "mue van" },
+      { id: "time_today", en: "Today", lo: "ມື້ນີ້", say: "mue nee" },
+      { id: "time_tomorrow", en: "Tomorrow", lo: "ມື້ອື່ນ", say: "mue eun" },
+    ],
+  },
+
+  {
+    title: "Understanding",
+    items: [
       {
-        id: "conv_i_dont_know",
+        id: "understand_i_dont_know",
         en: "I don't know",
         lo: "ຂ້ອຍບໍ່ຮູ້",
         say: "khoy bor hu",
       },
       {
-        id: "conv_i_understand",
+        id: "understand_i_understand",
         en: "I understand",
         lo: "ຂ້ອຍເຂົ້າໃຈ",
         say: "khoy khao jai",
       },
       {
-        id: "conv_i_dont_understand",
+        id: "understand_i_dont_understand",
         en: "I don't understand",
         lo: "ຂ້ອຍບໍ່ເຂົ້າໃຈ",
         say: "khoy bor khao jai",
       },
       {
-        id: "conv_repeat",
+        id: "understand_repeat",
         en: "Can you repeat?",
         lo: "ເວົ້າອີກເທື່ອໄດ້ບໍ?",
         say: "vao eek teu dai boh?",
       },
       {
-        id: "conv_slowly",
+        id: "understand_slowly",
         en: "Slowly please",
         lo: "ເວົ້າຊ້າໆແນ່",
         say: "vao sa sa nae",
       },
+    ],
+  },
 
-      { id: "conv_where", en: "Where?", lo: "ຢູ່ໃສ?", say: "yu sai?" },
-      { id: "conv_here", en: "Here", lo: "ຢູ່ນີ້", say: "yu nee" },
-      { id: "conv_there", en: "There", lo: "ຢູ່ນັ້ນ", say: "yu nan" },
+  {
+    title: "Requests",
+    items: [
+      { id: "req_can", en: "Can / OK (allowed)", lo: "ໄດ້", say: "dai" },
+      {
+        id: "req_cant",
+        en: "Can't / Not allowed",
+        lo: "ບໍ່ໄດ້",
+        say: "bor dai",
+      },
 
-      { id: "conv_good", en: "Good", lo: "ດີ", say: "dee" },
-      { id: "conv_not_good", en: "Not good", lo: "ບໍ່ດີ", say: "bor dee" },
-      { id: "conv_very_good", en: "Very good", lo: "ດີຫຼາຍ", say: "dee lai" },
+      {
+        id: "req_lets_go",
+        en: "Let's go",
+        lo: "ໄປກັນເລີຍ",
+        say: "pai gan loey",
+      },
+
+      {
+        id: "req_can_i_have",
+        en: "Can I have this?",
+        lo: "ຂໍອັນນີ້ໄດ້ບໍ?",
+        say: "kho an nee dai boh?",
+      },
+      { id: "req_i_want", en: "I want", lo: "ຂ້ອຍຢາກ", say: "khoy yak" },
+      {
+        id: "req_i_dont_want",
+        en: "I don't want",
+        lo: "ຂ້ອຍບໍ່ຢາກ",
+        say: "khoy bor yak",
+      },
+      { id: "req_give_me", en: "Give me", lo: "ໃຫ້ຂ້ອຍ", say: "hai khoy" },
+
+      {
+        id: "req_show_me",
+        en: "Show me / Let me see",
+        lo: "ເບິ່ງແນ່",
+        say: "boeung nae",
+      },
+
+      {
+        id: "req_have_you_eaten",
+        en: "Have you eaten?",
+        lo: "ກິນເຂົ້າແລ້ວບໍ?",
+        say: "gin khao laeo boh?",
+      },
+      {
+        id: "req_what_are_you_doing",
+        en: "What are you doing?",
+        lo: "ເຮັດຫຍັງຢູ່?",
+        say: "het nyang yu?",
+      },
+      {
+        id: "req_what_doing_later",
+        en: "What are you doing later?",
+        lo: "ຕອນຫຼັງຈະເຮັດຫຍັງ?",
+        say: "ton lang ja het nyang?",
+      },
+    ],
+  },
+
+  {
+    title: "Location",
+    items: [
+      { id: "loc_where", en: "Where?", lo: "ຢູ່ໃສ?", say: "yu sai?" },
+      { id: "loc_here", en: "Here", lo: "ຢູ່ນີ້", say: "yu nee" },
+      { id: "loc_there", en: "There", lo: "ຢູ່ນັ້ນ", say: "yu nan" },
+
+      { id: "loc_this", en: "This", lo: "ອັນນີ້", say: "an nee" },
+      { id: "loc_that", en: "That", lo: "ອັນນັ້ນ", say: "an nan" },
+
+      { id: "loc_come_here", en: "Come here", lo: "ມານີ້", say: "ma nee" },
+      { id: "loc_go_there", en: "Go there", lo: "ໄປນັ້ນ", say: "pai nan" },
     ],
   },
   {
