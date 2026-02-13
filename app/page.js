@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { PHRASE_GROUPS } from "./data/phrases";
 
 function matchesQuery(item, query) {
@@ -37,6 +37,12 @@ function playAudio(src) {
 export default function HomePage() {
   const [query, setQuery] = useState("");
   const [toast, setToast] = useState(false);
+  const [playingGroup, setPlayingGroup] = useState("");
+  const playlistRef = useRef({
+    audio: null,
+    sources: [],
+    index: 0,
+  });
 
   useEffect(() => {
     if (!("serviceWorker" in navigator)) return;
@@ -61,6 +67,48 @@ export default function HomePage() {
     }).filter((group) => group.items.length > 0);
   }, [query]);
 
+  function stopPlaylist() {
+    const current = playlistRef.current.audio;
+    if (current) {
+      current.pause();
+      current.onended = null;
+      current.onerror = null;
+    }
+    playlistRef.current = { audio: null, sources: [], index: 0 };
+    setPlayingGroup("");
+  }
+
+  function playNextInPlaylist() {
+    const state = playlistRef.current;
+    const nextIndex = state.index + 1;
+    if (nextIndex >= state.sources.length) {
+      stopPlaylist();
+      return;
+    }
+
+    state.index = nextIndex;
+    state.audio.src = state.sources[nextIndex];
+    state.audio.play().catch(() => {
+      playNextInPlaylist();
+    });
+  }
+
+  function playGroup(groupTitle, sources) {
+    if (!sources.length) return;
+
+    stopPlaylist();
+
+    const audio = new Audio(sources[0]);
+    playlistRef.current = { audio, sources, index: 0 };
+    setPlayingGroup(groupTitle);
+
+    audio.onended = playNextInPlaylist;
+    audio.onerror = playNextInPlaylist;
+    audio.play().catch(() => {
+      stopPlaylist();
+    });
+  }
+
   function showCopyToast() {
     setToast(true);
     window.setTimeout(() => {
@@ -76,6 +124,12 @@ export default function HomePage() {
       setToast(false);
     }
   }
+
+  useEffect(() => {
+    return () => {
+      stopPlaylist();
+    };
+  }, []);
 
   return (
     <main className="container">
@@ -111,6 +165,27 @@ export default function HomePage() {
             </summary>
 
             <div className="groupBody">
+              <div className="sectionActions">
+                <button
+                  type="button"
+                  className="playGroup"
+                  onClick={() =>
+                    playGroup(
+                      group.title,
+                      group.items.map((item) => item.audio).filter(Boolean)
+                    )
+                  }
+                  disabled={!group.items.some((item) => item.audio)}
+                >
+                  ▶ Play Section
+                </button>
+                {playingGroup === group.title && (
+                  <button type="button" className="stopGroup" onClick={stopPlaylist}>
+                    Stop
+                  </button>
+                )}
+              </div>
+
               {group.items.map((p) => {
                 const selectedAudio = p.audio;
 

@@ -56,16 +56,6 @@ input[type="search"] {
   background: var(--card);
 }
 
-.voiceToggle {
-  width: fit-content;
-  border: 0;
-  border-radius: 999px;
-  padding: 9px 14px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-weight: 600;
-}
-
 .groups {
   display: grid;
   gap: 10px;
@@ -102,6 +92,24 @@ summary span {
   padding: 0 10px 10px;
   display: grid;
   gap: 10px;
+}
+
+.sectionActions {
+  display: flex;
+  gap: 8px;
+}
+
+.sectionActions button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 0.88rem;
+  background: #fff;
+}
+
+.sectionActions .playGroup {
+  border-color: #9bc2ff;
+  background: #e9f1ff;
 }
 
 .card {
