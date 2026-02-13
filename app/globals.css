@@ -1,26 +1,174 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --ink: #121826;
+  --muted: #5f6b82;
+  --line: #d8dfeb;
+  --accent: #0059d6;
+  --accent-ink: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 45%);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px 14px 64px;
+}
+
+.topBar h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.topBar p {
+  margin: 8px 0 18px;
+  color: var(--muted);
+}
+
+.controls {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.searchLabel {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+input[type="search"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  background: var(--card);
+}
+
+.voiceToggle {
+  width: fit-content;
+  border: 0;
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.groups {
+  display: grid;
+  gap: 10px;
+}
+
+details {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  font-weight: 700;
+}
+
+summary span {
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  min-width: 28px;
+  text-align: center;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+}
+
+.groupBody {
+  padding: 0 10px 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.lao {
+  margin: 8px 0 4px;
+  font-size: 1.4rem;
+  line-height: 1.35;
+}
+
+.say {
+  margin: 0;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.actions button {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.88rem;
+}
+
+.actions .play {
+  border-color: #9bc2ff;
+  background: #e9f1ff;
+}
+
+.empty {
+  color: var(--muted);
+  margin: 8px 0;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 720px) {
+  .container {
+    padding: 20px 20px 72px;
+  }
+
+  .card {
+    padding: 12px;
+  }
 }
