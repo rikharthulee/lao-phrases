@@ -36,7 +36,6 @@ function playAudio(src) {
 
 export default function HomePage() {
   const [query, setQuery] = useState("");
-  const [voice, setVoice] = useState("tata");
   const [toast, setToast] = useState(false);
 
   useEffect(() => {
@@ -97,13 +96,6 @@ export default function HomePage() {
           onChange={(e) => setQuery(e.target.value)}
         />
 
-        <button
-          type="button"
-          className="voiceToggle"
-          onClick={() => setVoice((v) => (v === "tata" ? "barry" : "tata"))}
-        >
-          Voice: {voice}
-        </button>
       </section>
 
       <section className="groups" aria-label="Phrase groups">
@@ -120,7 +112,7 @@ export default function HomePage() {
 
             <div className="groupBody">
               {group.items.map((p) => {
-                const selectedAudio = p.audio?.[voice];
+                const selectedAudio = p.audio;
 
                 return (
                   <article key={p.id} className="card">

@@ -7,34 +7,35 @@ export const PHRASE_GROUPS = [
         en: "Hello",
         lo: "ສະບາຍດີ",
         say: "sa-bai-dee",
-        audio: {
-          tata: "/audio/daily/hello-tata.m4a",
-          barry: "/audio/daily/hello-barry.m4a",
-        },
+        audio: "/audio/daily/daily_hello.mp3",
       },
       {
         id: "daily_how_are_you",
         en: "How are you?",
         lo: "ເຈົ້າສະບາຍດີບໍ?",
         say: "chao sa-bai-dee boh?",
+        audio: "/audio/daily/daily_how_are_you.mp3",
       },
       {
         id: "daily_im_fine",
         en: "I am fine",
         lo: "ຂ້ອຍສະບາຍດີ",
         say: "khoy sa-bai-dee",
+        audio: "/audio/daily/daily_im_fine.mp3",
       },
       {
         id: "daily_thank_you",
         en: "Thank you",
         lo: "ຂອບໃຈ",
         say: "khop-jai",
+        audio: "/audio/daily/daily_thank_you.mp3",
       },
       {
         id: "daily_you_are_welcome",
         en: "You are welcome",
         lo: "ບໍ່ເປັນຫຍັງ",
         say: "bo pen nyang",
+        audio: "/audio/daily/daily_you_are_welcome.mp3",
       },
     ],
   },
@@ -78,6 +79,7 @@ export const PHRASE_GROUPS = [
         en: "I don't know",
         lo: "ຂ້ອຍບໍ່ຮູ້",
         say: "khoy bor hu",
+        audio: "/audio/understanding/i-dont-know.mp3",
       },
       {
         id: "understand_i_understand",
@@ -242,9 +244,7 @@ export const PHRASE_GROUPS = [
         en: "How much is it?",
         lo: "ເທົ່າໃດ?",
         say: "thao dai?",
-        audio: {
-          tata: "/audio/travel/how-much-tata.m4a",
-        },
+        audio: "/audio/travel/how-much-tata.m4a",
       },
       {
         id: "travel_left",
