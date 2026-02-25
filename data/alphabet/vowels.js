@@ -1,6 +1,4 @@
 export const VOWELS = [
-  // --- Basic Short / Long (After Consonant) ---
-
   {
     pattern: "-ະ",
     sound: "a",
@@ -8,6 +6,8 @@ export const VOWELS = [
     position: "after",
     example: "ກະ",
     exampleSay: "ga",
+    audio: "/audio/alphabet/vowels/a_short_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/a_short_example.mp3",
   },
   {
     pattern: "-ັ",
@@ -16,6 +16,8 @@ export const VOWELS = [
     position: "above",
     example: "ຮັກ",
     exampleSay: "hak",
+    audio: "/audio/alphabet/vowels/a_short_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/a_short_example.mp3",
   },
   {
     pattern: "-າ",
@@ -24,6 +26,8 @@ export const VOWELS = [
     position: "after",
     example: "ກາ",
     exampleSay: "gaa",
+    audio: "/audio/alphabet/vowels/aa_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/aa_long_example.mp3",
   },
   {
     pattern: "-ິ",
@@ -32,6 +36,8 @@ export const VOWELS = [
     position: "above",
     example: "ກິນ",
     exampleSay: "gin",
+    audio: "/audio/alphabet/vowels/i_short_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/i_short_example.mp3",
   },
   {
     pattern: "-ີ",
@@ -40,6 +46,8 @@ export const VOWELS = [
     position: "above",
     example: "ດີ",
     exampleSay: "dee",
+    audio: "/audio/alphabet/vowels/ii_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/ii_long_example.mp3",
   },
   {
     pattern: "-ຶ",
@@ -48,6 +56,8 @@ export const VOWELS = [
     position: "above",
     example: "ຄຶດ",
     exampleSay: "khuet",
+    audio: "/audio/alphabet/vowels/ue_short_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/ue_short_example.mp3",
   },
   {
     pattern: "-ື",
@@ -56,6 +66,8 @@ export const VOWELS = [
     position: "above",
     example: "ຊື່",
     exampleSay: "sue",
+    audio: "/audio/alphabet/vowels/uue_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/uue_long_example.mp3",
   },
   {
     pattern: "-ຸ",
@@ -64,6 +76,8 @@ export const VOWELS = [
     position: "below",
     example: "ສຸກ",
     exampleSay: "suk",
+    audio: "/audio/alphabet/vowels/u_short_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/u_short_example.mp3",
   },
   {
     pattern: "-ູ",
@@ -72,6 +86,8 @@ export const VOWELS = [
     position: "below",
     example: "ປູ",
     exampleSay: "puu",
+    audio: "/audio/alphabet/vowels/uu_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/uu_long_example.mp3",
   },
   {
     pattern: "-ົ",
@@ -80,10 +96,9 @@ export const VOWELS = [
     position: "above",
     example: "ກົດ",
     exampleSay: "got",
+    audio: "/audio/alphabet/vowels/o_short_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/o_short_example.mp3",
   },
-
-  // --- Before Consonant Vowels ---
-
   {
     pattern: "ເ-ະ",
     sound: "e",
@@ -91,6 +106,8 @@ export const VOWELS = [
     position: "surround",
     example: "ເກະ",
     exampleSay: "ge",
+    audio: "/audio/alphabet/vowels/e_short_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/e_short_example.mp3",
   },
   {
     pattern: "ເ-",
@@ -99,6 +116,8 @@ export const VOWELS = [
     position: "before",
     example: "ເດ",
     exampleSay: "de",
+    audio: "/audio/alphabet/vowels/e_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/e_long_example.mp3",
   },
   {
     pattern: "ແ-ະ",
@@ -107,6 +126,8 @@ export const VOWELS = [
     position: "surround",
     example: "ແກະ",
     exampleSay: "gae",
+    audio: "/audio/alphabet/vowels/ae_short_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/ae_short_example.mp3",
   },
   {
     pattern: "ແ-",
@@ -115,6 +136,8 @@ export const VOWELS = [
     position: "before",
     example: "ແມ່",
     exampleSay: "mae",
+    audio: "/audio/alphabet/vowels/ae_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/ae_long_example.mp3",
   },
   {
     pattern: "ໂ-",
@@ -123,6 +146,8 @@ export const VOWELS = [
     position: "before",
     example: "ໂຕ",
     exampleSay: "to",
+    audio: "/audio/alphabet/vowels/o_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/o_long_example.mp3",
   },
   {
     pattern: "ໃ-",
@@ -131,6 +156,8 @@ export const VOWELS = [
     position: "before",
     example: "ໃຫຍ່",
     exampleSay: "yai",
+    audio: "/audio/alphabet/vowels/ai_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/ai_long_example.mp3",
   },
   {
     pattern: "ໄ-",
@@ -139,10 +166,9 @@ export const VOWELS = [
     position: "before",
     example: "ໄປ",
     exampleSay: "pai",
+    audio: "/audio/alphabet/vowels/ai_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/ai_long_example.mp3",
   },
-
-  // --- Common Combination Vowels ---
-
   {
     pattern: "-ໍ",
     sound: "am",
@@ -150,6 +176,8 @@ export const VOWELS = [
     position: "above",
     example: "ນໍ້າ",
     exampleSay: "nam",
+    audio: "/audio/alphabet/vowels/am_short_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/am_short_example.mp3",
   },
   {
     pattern: "ເ-າ",
@@ -158,6 +186,8 @@ export const VOWELS = [
     position: "surround",
     example: "ເຂົາ",
     exampleSay: "khao",
+    audio: "/audio/alphabet/vowels/ao_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/ao_long_example.mp3",
   },
   {
     pattern: "ົວ",
@@ -166,6 +196,8 @@ export const VOWELS = [
     position: "after",
     example: "ຕົວ",
     exampleSay: "tua",
+    audio: "/audio/alphabet/vowels/ua_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/ua_long_example.mp3",
   },
   {
     pattern: "ເ-ືອ",
@@ -174,6 +206,8 @@ export const VOWELS = [
     position: "surround",
     example: "ເມືອງ",
     exampleSay: "mueang",
+    audio: "/audio/alphabet/vowels/uea_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/uea_long_example.mp3",
   },
   {
     pattern: "ເ-ີຍ",
@@ -182,5 +216,7 @@ export const VOWELS = [
     position: "surround",
     example: "ເຄີຍ",
     exampleSay: "koey",
+    audio: "/audio/alphabet/vowels/oei_long_pattern.mp3",
+    exampleAudio: "/audio/alphabet/vowels/oei_long_example.mp3",
   },
 ];

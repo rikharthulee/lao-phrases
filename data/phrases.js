@@ -37,6 +37,13 @@ export const PHRASE_GROUPS = [
         say: "bo pen nyang",
         audio: "/audio/daily/daily_you_are_welcome.mp3",
       },
+      {
+        id: "family_tomorrow",
+        en: "See you tomorrow",
+        lo: "ພົບກັນມື້ອື່ນ",
+        say: "pop-gan mue-ern",
+        audio: "/audio/family/family_tomorrow.mp3",
+      },
     ],
   },
   {
@@ -864,13 +871,6 @@ export const PHRASE_GROUPS = [
         lo: "ເຈົ້າມີລູກບໍ?",
         say: "chao mi luk boh?",
         audio: "/audio/family/family_children.mp3",
-      },
-      {
-        id: "family_tomorrow",
-        en: "See you tomorrow",
-        lo: "ພົບກັນມື້ອື່ນ",
-        say: "pop-gan mue-ern",
-        audio: "/audio/family/family_tomorrow.mp3",
       },
     ],
   },

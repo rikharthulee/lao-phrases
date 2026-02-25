@@ -86,7 +86,7 @@ export const CONSONANTS = [
     sound: "s",
     example: "ສຸກ",
     exampleSay: "suk",
-    audio: "/audio/alphabet/consonants/ສ.mp3",
+    audio: "/audio/alphabet/consonants/ສ_letter.mp3",
     exampleAudio: "/audio/alphabet/consonants/ສ_example.mp3",
   },
   {

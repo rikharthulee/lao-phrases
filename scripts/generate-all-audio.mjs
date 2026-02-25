@@ -64,6 +64,20 @@ function buildSsml(text) {
   `;
 }
 
+function buildEnglish(text) {
+  return `
+    <speak version="1.0" xml:lang="en-GB">
+      <voice name="en-GB-SoniaNeural">
+        ${text}
+      </voice>
+    </speak>
+  `;
+}
+
+function synthesizeEnglish(text, outputPath) {
+  return synthesizeSsml(buildEnglish(text), outputPath);
+}
+
 /* ---------------- PHRASES ---------------- */
 
 async function generatePhrases() {
@@ -74,10 +88,16 @@ async function generatePhrases() {
     ensureDir(outputDir);
 
     for (const item of group.items) {
-      const outputPath = `${outputDir}/${item.id}.mp3`;
-      if (fs.existsSync(outputPath)) continue;
+      const laoPath = `${outputDir}/${item.id}_lo.mp3`;
+      const engPath = `${outputDir}/${item.id}_en.mp3`;
 
-      await synthesizeSsml(buildSsml(item.lo), outputPath);
+      if (!fs.existsSync(laoPath)) {
+        await synthesizeSsml(buildSsml(item.lo), laoPath);
+      }
+
+      if (!fs.existsSync(engPath)) {
+        await synthesizeEnglish(item.en, engPath);
+      }
     }
   }
 }
@@ -91,12 +111,11 @@ async function generateVowels() {
   ensureDir(outputDir);
 
   for (const vowel of VOWELS) {
-    const safePattern = vowel.pattern.replace(/[^a-zA-Z0-9]/g, "_");
+    const safeName = `${vowel.sound}_${vowel.length}`;
 
-    const patternPath = `${outputDir}/${safePattern}_pattern.mp3`;
-    const examplePath = `${outputDir}/${safePattern}_example.mp3`;
+    const patternPath = `${outputDir}/${safeName}_pattern.mp3`;
+    const examplePath = `${outputDir}/${safeName}_example.mp3`;
 
-    // Replace placeholder dash with ກ
     const spokenPattern = vowel.pattern.replace("-", "ກ");
 
     if (!fs.existsSync(patternPath)) {

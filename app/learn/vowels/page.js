@@ -13,16 +13,22 @@ function applyToPlaceholder(pattern) {
   return pattern.replace("-", "ກ");
 }
 
-function getVowelAudioSrc(pattern) {
-  if (!pattern) return "";
-  const fileName = pattern.replace("-", "");
-  return `/audio/vowels/${encodeURIComponent(fileName)}.mp3`;
-}
+function playSequence(firstSrc, secondSrc) {
+  if (!firstSrc && !secondSrc) return;
 
-function playAudio(src) {
-  if (!src) return;
-  const audio = new Audio(src);
-  audio.play().catch(() => {});
+  if (!firstSrc && secondSrc) {
+    const only = new Audio(secondSrc);
+    only.play().catch(() => {});
+    return;
+  }
+
+  const first = new Audio(firstSrc);
+  first.onended = () => {
+    if (!secondSrc) return;
+    const second = new Audio(secondSrc);
+    second.play().catch(() => {});
+  };
+  first.play().catch(() => {});
 }
 
 function Section({ title, letters }) {
@@ -64,7 +70,7 @@ function Section({ title, letters }) {
 
             <button
               type="button"
-              onClick={() => playAudio(getVowelAudioSrc(vowel.pattern))}
+              onClick={() => playSequence(vowel.audio, vowel.exampleAudio)}
               style={{
                 marginTop: "10px",
                 border: "1px solid #d8dde5",
@@ -91,6 +97,8 @@ export default function VowelsPage() {
     position: item.position,
     example: item.example,
     exampleSay: item.exampleSay,
+    audio: item.audio,
+    exampleAudio: item.exampleAudio,
   }));
 
   return (
