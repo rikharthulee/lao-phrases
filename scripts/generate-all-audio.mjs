@@ -111,15 +111,13 @@ async function generateVowels() {
   ensureDir(outputDir);
 
   for (const vowel of VOWELS) {
-    const safeName = `${vowel.sound}_${vowel.length}`;
+    const safeName = `${vowel.sound}_${vowel.vowelLength}`;
 
     const patternPath = `${outputDir}/${safeName}_pattern.mp3`;
     const examplePath = `${outputDir}/${safeName}_example.mp3`;
 
-    const spokenPattern = vowel.pattern.replace("-", "ກ");
-
     if (!fs.existsSync(patternPath)) {
-      await synthesizeSsml(buildSsml(spokenPattern), patternPath);
+      await synthesizeSsml(buildSsml(vowel.standalone), patternPath);
     }
 
     if (!fs.existsSync(examplePath)) {

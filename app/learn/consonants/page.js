@@ -23,9 +23,9 @@ function Section({ title, letters }) {
 }
 
 export default function ConsonantsPage() {
-  const mid = CONSONANTS.filter((c) => c.class === "mid");
-  const high = CONSONANTS.filter((c) => c.class === "high");
-  const low = CONSONANTS.filter((c) => c.class === "low");
+  const mid = CONSONANTS.filter((c) => c.toneClass === "mid");
+  const high = CONSONANTS.filter((c) => c.toneClass === "high");
+  const low = CONSONANTS.filter((c) => c.toneClass === "low");
 
   return (
     <main className="container">

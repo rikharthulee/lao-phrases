@@ -35,6 +35,8 @@ export default function ConsonantCard({ letter }) {
       <div style={{ fontSize: "42px", lineHeight: 1.1 }}>{letter.char}</div>
       <div style={{ marginTop: "6px", fontWeight: 700 }}>{letter.name}</div>
       <div style={{ color: "#60656f", marginTop: "2px" }}>Sound: {letter.sound}</div>
+      <div style={{ color: "#60656f", marginTop: "2px" }}>IPA: /{letter.ipa}/</div>
+      <div style={{ color: "#60656f", marginTop: "2px" }}>Class: {letter.toneClass}</div>
 
       <div style={{ marginTop: "10px", fontSize: "14px" }}>
         <div>Example: {letter.example}</div>
