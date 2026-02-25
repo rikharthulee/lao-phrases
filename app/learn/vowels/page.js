@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useMemo, useState } from "react";
 import { VOWELS } from "@/data/alphabet/vowels";
 
 const VOWEL_FAMILIES = [
@@ -28,22 +29,27 @@ function applyToPlaceholder(pattern) {
   return pattern.replace("-", "ກ");
 }
 
-function playSequence(firstSrc, secondSrc) {
-  if (!firstSrc && !secondSrc) return;
+function playAudio(src) {
+  return new Promise((resolve) => {
+    if (!src) {
+      resolve();
+      return;
+    }
 
-  if (!firstSrc && secondSrc) {
-    const only = new Audio(secondSrc);
-    only.play().catch(() => {});
-    return;
+    const audio = new Audio(src);
+    audio.onended = () => resolve();
+    audio.onerror = () => resolve();
+
+    audio.play().catch(() => resolve());
+  });
+}
+
+async function playVowel(vowel, includeExamples) {
+  await playAudio(vowel.audio || "");
+
+  if (includeExamples) {
+    await playAudio(vowel.exampleAudio || "");
   }
-
-  const first = new Audio(firstSrc);
-  first.onended = () => {
-    if (!secondSrc) return;
-    const second = new Audio(secondSrc);
-    second.play().catch(() => {});
-  };
-  first.play().catch(() => {});
 }
 
 function familySizeLabel(length) {
@@ -52,7 +58,7 @@ function familySizeLabel(length) {
   return "Single";
 }
 
-function VowelCard({ vowel }) {
+function VowelCard({ vowel, includeExamples }) {
   return (
     <div
       style={{
@@ -83,7 +89,9 @@ function VowelCard({ vowel }) {
 
       <button
         type="button"
-        onClick={() => playSequence(vowel.audio, vowel.exampleAudio)}
+        onClick={() => {
+          void playVowel(vowel, includeExamples);
+        }}
         style={{
           marginTop: "10px",
           border: "1px solid #d8dde5",
@@ -99,7 +107,7 @@ function VowelCard({ vowel }) {
   );
 }
 
-function Section({ title, letters }) {
+function Section({ title, letters, includeExamples }) {
   return (
     <section style={{ marginBottom: "28px" }} aria-label={`${title} vowels`}>
       <h2 className="classHeading">
@@ -114,7 +122,7 @@ function Section({ title, letters }) {
         }}
       >
         {letters.map((vowel) => (
-          <VowelCard key={`${vowel.pattern}-${vowel.standalone}`} vowel={vowel} />
+          <VowelCard key={`${vowel.pattern}-${vowel.standalone}`} vowel={vowel} includeExamples={includeExamples} />
         ))}
       </div>
     </section>
@@ -122,11 +130,38 @@ function Section({ title, letters }) {
 }
 
 export default function VowelsPage() {
-  const byPattern = new Map(VOWELS.map((vowel) => [vowel.pattern, vowel]));
-  const groupedFamilies = VOWEL_FAMILIES.map((family) => ({
-    ...family,
-    letters: family.patterns.map((pattern) => byPattern.get(pattern)).filter(Boolean),
-  })).filter((family) => family.letters.length > 0);
+  const [includeExamples, setIncludeExamples] = useState(false);
+  const [isPlayingAll, setIsPlayingAll] = useState(false);
+
+  const byPattern = useMemo(() => new Map(VOWELS.map((vowel) => [vowel.pattern, vowel])), []);
+
+  const groupedFamilies = useMemo(
+    () =>
+      VOWEL_FAMILIES.map((family) => ({
+        ...family,
+        letters: family.patterns.map((pattern) => byPattern.get(pattern)).filter(Boolean),
+      })).filter((family) => family.letters.length > 0),
+    [byPattern],
+  );
+
+  const orderedVowels = useMemo(
+    () => groupedFamilies.flatMap((family) => family.letters),
+    [groupedFamilies],
+  );
+
+  async function handlePlayAll() {
+    if (isPlayingAll) return;
+
+    setIsPlayingAll(true);
+
+    try {
+      for (const vowel of orderedVowels) {
+        await playVowel(vowel, includeExamples);
+      }
+    } finally {
+      setIsPlayingAll(false);
+    }
+  }
 
   return (
     <main className="container">
@@ -140,8 +175,35 @@ export default function VowelsPage() {
         <Link href="/learn/consonants">Consonants</Link>
       </nav>
 
+      <section style={{ display: "flex", gap: "10px", alignItems: "center", marginBottom: "16px", flexWrap: "wrap" }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "8px", color: "#60656f" }}>
+          <input
+            type="checkbox"
+            checked={includeExamples}
+            onChange={(event) => setIncludeExamples(event.target.checked)}
+          />
+          Include example audio
+        </label>
+
+        <button
+          type="button"
+          onClick={handlePlayAll}
+          disabled={isPlayingAll}
+          style={{
+            border: "1px solid #d8dde5",
+            borderRadius: "8px",
+            padding: "8px 12px",
+            background: "#eaf2ff",
+            cursor: isPlayingAll ? "not-allowed" : "pointer",
+            opacity: isPlayingAll ? 0.7 : 1,
+          }}
+        >
+          {isPlayingAll ? "Playing..." : "Play all"}
+        </button>
+      </section>
+
       {groupedFamilies.map((family) => (
-        <Section key={family.id} title={family.title} letters={family.letters} />
+        <Section key={family.id} title={family.title} letters={family.letters} includeExamples={includeExamples} />
       ))}
     </main>
   );

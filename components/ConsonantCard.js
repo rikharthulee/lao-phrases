@@ -1,24 +1,29 @@
 "use client";
 
-function playSequence(firstSrc, secondSrc) {
-  if (!firstSrc && !secondSrc) return;
+function playAudio(src) {
+  return new Promise((resolve) => {
+    if (!src) {
+      resolve();
+      return;
+    }
 
-  if (!firstSrc && secondSrc) {
-    const only = new Audio(secondSrc);
-    only.play().catch(() => {});
-    return;
-  }
+    const audio = new Audio(src);
+    audio.onended = () => resolve();
+    audio.onerror = () => resolve();
 
-  const first = new Audio(firstSrc);
-  first.onended = () => {
-    if (!secondSrc) return;
-    const second = new Audio(secondSrc);
-    second.play().catch(() => {});
-  };
-  first.play().catch(() => {});
+    audio.play().catch(() => resolve());
+  });
 }
 
-export default function ConsonantCard({ letter }) {
+async function playSequence(firstSrc, secondSrc, includeExample) {
+  await playAudio(firstSrc);
+
+  if (includeExample) {
+    await playAudio(secondSrc);
+  }
+}
+
+export default function ConsonantCard({ letter, includeExamples = false }) {
   const audioSrc = letter.audio || `/audio/consonants/${encodeURIComponent(letter.char)}.mp3`;
   const exampleAudioSrc = letter.exampleAudio || "";
 
@@ -46,7 +51,9 @@ export default function ConsonantCard({ letter }) {
       {audioSrc ? (
         <button
           type="button"
-          onClick={() => playSequence(audioSrc, exampleAudioSrc)}
+          onClick={() => {
+            void playSequence(audioSrc, exampleAudioSrc, includeExamples);
+          }}
           style={{
             marginTop: "10px",
             border: "1px solid #d8dde5",
