@@ -54,6 +54,7 @@ export const PHRASE_GROUPS = [
         en: "Yes",
         lo: "ແມ່ນ",
         say: "maen",
+        tone: "falling",
         audio: "/audio/basics/basic_yes.mp3",
       },
       {
@@ -61,6 +62,7 @@ export const PHRASE_GROUPS = [
         en: "No",
         lo: "ບໍ່",
         say: "bor",
+        tone: "falling",
         audio: "/audio/basics/basic_no.mp3",
       },
       {
@@ -68,6 +70,7 @@ export const PHRASE_GROUPS = [
         en: "Maybe",
         lo: "ອາດຈະ",
         say: "aat ja",
+        tone: "falling",
         audio: "/audio/basics/basic_maybe.mp3",
       },
       {
@@ -75,6 +78,7 @@ export const PHRASE_GROUPS = [
         en: "Please",
         lo: "ກະລຸນາ",
         say: "ga-lu-na",
+        tone: "mid",
         audio: "/audio/basics/basic_please.mp3",
       },
       {
@@ -82,6 +86,7 @@ export const PHRASE_GROUPS = [
         en: "Sorry / Excuse me",
         lo: "ຂໍໂທດ",
         say: "kho thot",
+        tone: "falling",
         audio: "/audio/basics/basic_sorry.mp3",
       },
       {
@@ -89,6 +94,7 @@ export const PHRASE_GROUPS = [
         en: "Good",
         lo: "ດີ",
         say: "dee",
+        tone: "mid",
         audio: "/audio/basics/basic_good.mp3",
       },
       {
@@ -96,6 +102,7 @@ export const PHRASE_GROUPS = [
         en: "Not good",
         lo: "ບໍ່ດີ",
         say: "bor dee",
+        tone: "falling",
         audio: "/audio/basics/basic_not_good.mp3",
       },
       {
@@ -103,6 +110,7 @@ export const PHRASE_GROUPS = [
         en: "Very good",
         lo: "ດີຫຼາຍ",
         say: "dee lai",
+        tone: "mid",
         audio: "/audio/basics/basic_very_good.mp3",
       },
       {
@@ -110,6 +118,7 @@ export const PHRASE_GROUPS = [
         en: "And",
         lo: "ແລະ",
         say: "lae",
+        tone: "low",
         audio: "/audio/basics/basic_and.mp3",
       },
       {
@@ -117,6 +126,7 @@ export const PHRASE_GROUPS = [
         en: "Also / too",
         lo: "ນຳ",
         say: "nam",
+        tone: "mid",
         audio: "/audio/basics/basic_also.mp3",
       },
       {
@@ -124,6 +134,7 @@ export const PHRASE_GROUPS = [
         en: "With",
         lo: "ນຳ",
         say: "nam",
+        tone: "mid",
         audio: "/audio/basics/basic_with.mp3",
       },
       {
@@ -131,6 +142,7 @@ export const PHRASE_GROUPS = [
         en: "Or",
         lo: "ຫຼື",
         say: "lue",
+        tone: "rising",
         audio: "/audio/basics/basic_or.mp3",
       },
     ],
@@ -554,6 +566,7 @@ export const PHRASE_GROUPS = [
         en: "Red",
         lo: "ສີແດງ",
         say: "see daeng",
+        tone: "mid",
         audio: "/audio/colours/colour_red.mp3",
       },
       {
@@ -561,6 +574,7 @@ export const PHRASE_GROUPS = [
         en: "Blue",
         lo: "ສີຟ້າ",
         say: "see faa",
+        tone: "falling",
         audio: "/audio/colours/colour_blue.mp3",
       },
       {
@@ -568,6 +582,7 @@ export const PHRASE_GROUPS = [
         en: "Green",
         lo: "ສີຂຽວ",
         say: "see khiao",
+        tone: "rising",
         audio: "/audio/colours/colour_green.mp3",
       },
       {
@@ -575,6 +590,7 @@ export const PHRASE_GROUPS = [
         en: "Yellow",
         lo: "ສີເຫຼືອງ",
         say: "see lueang",
+        tone: "rising",
         audio: "/audio/colours/colour_yellow.mp3",
       },
       {
@@ -582,6 +598,7 @@ export const PHRASE_GROUPS = [
         en: "Black",
         lo: "ສີດຳ",
         say: "see dam",
+        tone: "falling",
         audio: "/audio/colours/colour_black.mp3",
       },
       {
@@ -589,6 +606,7 @@ export const PHRASE_GROUPS = [
         en: "White",
         lo: "ສີຂາວ",
         say: "see khao",
+        tone: "falling",
         audio: "/audio/colours/colour_white.mp3",
       },
       {
@@ -596,6 +614,7 @@ export const PHRASE_GROUPS = [
         en: "Orange",
         lo: "ສີສົ້ມ",
         say: "see som",
+        tone: "falling",
         audio: "/audio/colours/colour_orange.mp3",
       },
       {
@@ -603,6 +622,7 @@ export const PHRASE_GROUPS = [
         en: "Pink",
         lo: "ສີບົວ",
         say: "see bua",
+        tone: "mid",
         audio: "/audio/colours/colour_pink.mp3",
       },
       {
@@ -610,6 +630,7 @@ export const PHRASE_GROUPS = [
         en: "Purple",
         lo: "ສີມ່ວງ",
         say: "see muang",
+        tone: "falling",
         audio: "/audio/colours/colour_purple.mp3",
       },
       {
@@ -617,6 +638,7 @@ export const PHRASE_GROUPS = [
         en: "Brown",
         lo: "ສີນ້ຳຕານ",
         say: "see nam-tan",
+        tone: "falling",
         audio: "/audio/colours/colour_brown.mp3",
       },
     ],
@@ -629,6 +651,7 @@ export const PHRASE_GROUPS = [
         en: "Zero",
         lo: "ສູນ",
         say: "soon",
+        tone: "rising",
         audio: "/audio/numbers/num_0.mp3",
       },
       {
@@ -636,6 +659,7 @@ export const PHRASE_GROUPS = [
         en: "One",
         lo: "ໜຶ່ງ",
         say: "neung",
+        tone: "falling",
         audio: "/audio/numbers/num_1.mp3",
       },
       {
@@ -643,6 +667,7 @@ export const PHRASE_GROUPS = [
         en: "Two",
         lo: "ສອງ",
         say: "song",
+        tone: "rising",
         audio: "/audio/numbers/num_2.mp3",
       },
       {
@@ -650,6 +675,7 @@ export const PHRASE_GROUPS = [
         en: "Three",
         lo: "ສາມ",
         say: "saam",
+        tone: "rising",
         audio: "/audio/numbers/num_3.mp3",
       },
       {
@@ -657,6 +683,7 @@ export const PHRASE_GROUPS = [
         en: "Four",
         lo: "ສີ່",
         say: "see",
+        tone: "falling",
         audio: "/audio/numbers/num_4.mp3",
       },
       {
@@ -664,6 +691,7 @@ export const PHRASE_GROUPS = [
         en: "Five",
         lo: "ຫ້າ",
         say: "ha",
+        tone: "falling",
         audio: "/audio/numbers/num_5.mp3",
       },
       {
@@ -671,6 +699,7 @@ export const PHRASE_GROUPS = [
         en: "Six",
         lo: "ຫົກ",
         say: "hok",
+        tone: "low",
         audio: "/audio/numbers/num_6.mp3",
       },
       {
@@ -678,6 +707,7 @@ export const PHRASE_GROUPS = [
         en: "Seven",
         lo: "ເຈັດ",
         say: "jet",
+        tone: "high",
         audio: "/audio/numbers/num_7.mp3",
       },
       {
@@ -685,6 +715,7 @@ export const PHRASE_GROUPS = [
         en: "Eight",
         lo: "ແປດ",
         say: "paet",
+        tone: "falling",
         audio: "/audio/numbers/num_8.mp3",
       },
       {
@@ -692,6 +723,7 @@ export const PHRASE_GROUPS = [
         en: "Nine",
         lo: "ເກົ້າ",
         say: "gao",
+        tone: "falling",
         audio: "/audio/numbers/num_9.mp3",
       },
       {
@@ -699,6 +731,7 @@ export const PHRASE_GROUPS = [
         en: "Ten",
         lo: "ສິບ",
         say: "sip",
+        tone: "high",
         audio: "/audio/numbers/num_10.mp3",
       },
       {
@@ -706,6 +739,7 @@ export const PHRASE_GROUPS = [
         en: "Eleven",
         lo: "ສິບເອັດ",
         say: "sip et",
+        tone: "high",
         audio: "/audio/numbers/num_11.mp3",
       },
       {
@@ -713,6 +747,7 @@ export const PHRASE_GROUPS = [
         en: "Twenty",
         lo: "ຊາວ",
         say: "sao",
+        tone: "low",
         audio: "/audio/numbers/num_20.mp3",
       },
       {
@@ -720,6 +755,7 @@ export const PHRASE_GROUPS = [
         en: "Twenty one",
         lo: "ຊາວເອັດ",
         say: "sao et",
+        tone: "low",
         audio: "/audio/numbers/num_21.mp3",
       },
       {
@@ -727,6 +763,7 @@ export const PHRASE_GROUPS = [
         en: "Thirty",
         lo: "ສາມສິບ",
         say: "saam sip",
+        tone: "rising",
         audio: "/audio/numbers/num_30.mp3",
       },
       {
@@ -734,6 +771,7 @@ export const PHRASE_GROUPS = [
         en: "Forty",
         lo: "ສີ່ສິບ",
         say: "see sip",
+        tone: "falling",
         audio: "/audio/numbers/num_40.mp3",
       },
       {
@@ -741,6 +779,7 @@ export const PHRASE_GROUPS = [
         en: "Fifty",
         lo: "ຫ້າສິບ",
         say: "ha sip",
+        tone: "falling",
         audio: "/audio/numbers/num_50.mp3",
       },
       {
@@ -748,6 +787,7 @@ export const PHRASE_GROUPS = [
         en: "Fifty one",
         lo: "ຫ້າສິບເອັດ",
         say: "ha sip et",
+        tone: "falling",
         audio: "/audio/numbers/num_51.mp3",
       },
       {
@@ -755,6 +795,7 @@ export const PHRASE_GROUPS = [
         en: "One hundred",
         lo: "ໜຶ່ງຮ້ອຍ",
         say: "neung hoi",
+        tone: "rising",
         audio: "/audio/numbers/num_100.mp3",
       },
       {
@@ -762,6 +803,7 @@ export const PHRASE_GROUPS = [
         en: "One thousand",
         lo: "ໜຶ່ງພັນ",
         say: "neung pan",
+        tone: "mid",
         audio: "/audio/numbers/num_1000.mp3",
       },
       {
@@ -769,6 +811,7 @@ export const PHRASE_GROUPS = [
         en: "Ten thousand",
         lo: "ສິບພັນ / ໜຶ່ງໝື່ນ",
         say: "sip pan / neung meun",
+        tone: "high",
         audio: "/audio/numbers/num_10000.mp3",
       },
       {
@@ -776,6 +819,7 @@ export const PHRASE_GROUPS = [
         en: "One hundred thousand",
         lo: "ໜຶ່ງແສນ",
         say: "neung san",
+        tone: "rising",
         audio: "/audio/numbers/num_100000.mp3",
       },
       {
@@ -783,6 +827,7 @@ export const PHRASE_GROUPS = [
         en: "One million",
         lo: "ໜຶ່ງລ້ານ",
         say: "neung lan",
+        tone: "falling",
         audio: "/audio/numbers/num_1000000.mp3",
       },
     ],
@@ -795,6 +840,7 @@ export const PHRASE_GROUPS = [
         en: "Monday",
         lo: "ວັນຈັນ",
         say: "van jan",
+        tone: "mid",
         audio: "/audio/days/day_monday.mp3",
       },
       {
@@ -802,6 +848,7 @@ export const PHRASE_GROUPS = [
         en: "Tuesday",
         lo: "ວັນອັງຄານ",
         say: "van ang-khan",
+        tone: "mid",
         audio: "/audio/days/day_tuesday.mp3",
       },
       {
@@ -809,6 +856,7 @@ export const PHRASE_GROUPS = [
         en: "Wednesday",
         lo: "ວັນພຸດ",
         say: "van phut",
+        tone: "mid",
         audio: "/audio/days/day_wednesday.mp3",
       },
       {
@@ -816,6 +864,7 @@ export const PHRASE_GROUPS = [
         en: "Thursday",
         lo: "ວັນພະຫັດ",
         say: "van pha-hat",
+        tone: "mid",
         audio: "/audio/days/day_thursday.mp3",
       },
       {
@@ -823,6 +872,7 @@ export const PHRASE_GROUPS = [
         en: "Friday",
         lo: "ວັນສຸກ",
         say: "van suk",
+        tone: "mid",
         audio: "/audio/days/day_friday.mp3",
       },
       {
@@ -830,6 +880,7 @@ export const PHRASE_GROUPS = [
         en: "Saturday",
         lo: "ວັນເສົາ",
         say: "van sao",
+        tone: "rising",
         audio: "/audio/days/day_saturday.mp3",
       },
       {
@@ -837,6 +888,7 @@ export const PHRASE_GROUPS = [
         en: "Sunday",
         lo: "ວັນອາທິດ",
         say: "van a-thit",
+        tone: "low",
         audio: "/audio/days/day_sunday.mp3",
       },
     ],
@@ -964,6 +1016,7 @@ export const PHRASE_GROUPS = [
         en: "Dog",
         lo: "ໝາ",
         say: "ma",
+        tone: "rising",
         audio: "/audio/animals/animal_dog.mp3",
       },
       {
@@ -971,6 +1024,7 @@ export const PHRASE_GROUPS = [
         en: "Cat",
         lo: "ແມວ",
         say: "maeo",
+        tone: "mid",
         audio: "/audio/animals/animal_cat.mp3",
       },
       {
@@ -978,6 +1032,7 @@ export const PHRASE_GROUPS = [
         en: "Cow",
         lo: "ງົວ",
         say: "ngua",
+        tone: "rising",
         audio: "/audio/animals/animal_cow.mp3",
       },
       {
@@ -985,6 +1040,7 @@ export const PHRASE_GROUPS = [
         en: "Chicken",
         lo: "ໄກ່",
         say: "gai",
+        tone: "rising",
         audio: "/audio/animals/animal_chicken.mp3",
       },
       {
@@ -992,6 +1048,7 @@ export const PHRASE_GROUPS = [
         en: "Fish",
         lo: "ປາ",
         say: "pa",
+        tone: "mid",
         audio: "/audio/animals/animal_fish.mp3",
       },
     ],
@@ -1004,6 +1061,7 @@ export const PHRASE_GROUPS = [
         en: "Mother",
         lo: "ແມ່",
         say: "mae",
+        tone: "falling",
         audio: "/audio/family_members/fam_mother.mp3",
       },
       {
@@ -1011,6 +1069,7 @@ export const PHRASE_GROUPS = [
         en: "Father",
         lo: "ພໍ່",
         say: "pho",
+        tone: "falling",
         audio: "/audio/family_members/fam_father.mp3",
       },
       {
@@ -1018,6 +1077,7 @@ export const PHRASE_GROUPS = [
         en: "Older brother",
         lo: "ອ້າຍ",
         say: "ai",
+        tone: "falling",
         audio: "/audio/family_members/fam_brother.mp3",
       },
       {
@@ -1025,6 +1085,7 @@ export const PHRASE_GROUPS = [
         en: "Older sister",
         lo: "ເອື້ອຍ",
         say: "euay",
+        tone: "falling",
         audio: "/audio/family_members/fam_sister.mp3",
       },
       {
@@ -1032,6 +1093,7 @@ export const PHRASE_GROUPS = [
         en: "Younger brother",
         lo: "ນ້ອງຊາຍ",
         say: "nong sai",
+        tone: "high",
         audio: "/audio/family_members/fam_younger_brother.mp3",
       },
       {
@@ -1039,7 +1101,48 @@ export const PHRASE_GROUPS = [
         en: "Younger sister",
         lo: "ນ້ອງສາວ",
         say: "nong sao",
+        tone: "rising",
         audio: "/audio/family_members/fam_younger_sister.mp3",
+      },
+      {
+        id: "fam_aunt_younger",
+        en: "Mother's younger sister / Aunt",
+        lo: "ນ້າ",
+        say: "naa",
+        tone: "falling",
+        audio: "/audio/family_members/fam_aunt_younger.mp3",
+      },
+      {
+        id: "fam_uncle_older",
+        en: "Older male relative / Uncle",
+        lo: "ລຸງ",
+        say: "lung",
+        tone: "mid",
+        audio: "/audio/family_members/fam_uncle_older.mp3",
+      },
+      {
+        id: "fam_uncle_younger",
+        en: "Father's younger brother / Uncle",
+        lo: "ອາວ",
+        say: "aao",
+        tone: "mid",
+        audio: "/audio/family_members/fam_uncle_younger.mp3",
+      },
+      {
+        id: "fam_aunt_general",
+        en: "Aunt (general)",
+        lo: "ອາ",
+        say: "aa",
+        tone: "mid",
+        audio: "/audio/family_members/fam_aunt_general.mp3",
+      },
+      {
+        id: "fam_cousin",
+        en: "Cousin",
+        lo: "ລູກພີ່ນ້ອງ",
+        say: "luk pee nong",
+        tone: "falling",
+        audio: "/audio/family_members/fam_cousin.mp3",
       },
     ],
   },

@@ -84,12 +84,16 @@ async function generatePhrases() {
   console.log("Generating phrases...");
 
   for (const group of PHRASE_GROUPS) {
-    const outputDir = `public/audio/${group.title.toLowerCase()}`;
-    ensureDir(outputDir);
-
     for (const item of group.items) {
-      const laoPath = `${outputDir}/${item.id}_lo.mp3`;
-      const engPath = `${outputDir}/${item.id}_en.mp3`;
+      const baseAudioPath = item.audio.startsWith("/")
+        ? item.audio.slice(1)
+        : item.audio;
+      const basePath = `public/${baseAudioPath.replace(/\.mp3$/, "")}`;
+      const outputDir = basePath.substring(0, basePath.lastIndexOf("/"));
+      const laoPath = `${basePath}_lo.mp3`;
+      const engPath = `${basePath}_en.mp3`;
+
+      ensureDir(outputDir);
 
       if (!fs.existsSync(laoPath)) {
         await synthesizeSsml(buildSsml(item.lo), laoPath);
