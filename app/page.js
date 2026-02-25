@@ -30,7 +30,8 @@ export default function HomePage() {
         return (
           item.en.toLowerCase().includes(q) ||
           item.lo.toLowerCase().includes(q) ||
-          item.say.toLowerCase().includes(q)
+          item.say.toLowerCase().includes(q) ||
+          item.tone?.toLowerCase().includes(q)
         );
       }),
     })).filter((group) => group.items.length > 0);
@@ -188,6 +189,9 @@ export default function HomePage() {
                   <p className="lao">{phrase.lo}</p>
                   <p className="english">{phrase.en}</p>
                   <p className="say">{phrase.say}</p>
+                  {phrase.tone ? (
+                    <p className="toneLabel">Tone: {phrase.tone}</p>
+                  ) : null}
 
                   <button
                     type="button"

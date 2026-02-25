@@ -99,6 +99,14 @@ summary {
   color: var(--muted);
 }
 
+.toneLabel {
+  margin: 6px 0 0;
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
 .play {
   margin-top: 10px;
   border: 1px solid var(--line);
